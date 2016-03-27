@@ -1,0 +1,41 @@
+created: 20160327181853852
+modified: 20160327184343097
+tags: 
+title: Welcome
+type: text/vnd.tiddlywiki
+
+\define pluginSummary(plugin)
+; $plugin$
+: {{$plugin$!!description}}
+\end
+
+This wiki serves as a live demo and distribution source for a couple of [[TiddlyWiki5|http://tiddlywiki.com]] plugins. To install, just drag and drop them to your wiki.
+
+! The plugins
+!! themes
+<<pluginSummary $:/themes/nome/github>>
+
+!! plugins
+<<pluginSummary $:/plugins/nome/publishing>>
+
+!! core hacks
+These are packaged as plugins, but listed separately, because they modify core functionality and thus may break future ~TiddlyWiki updates or other plugins.
+
+<<pluginSummary $:/plugins/nome/KbShortcuts>>
+
+!! modified versions of other people's plugins
+<<pluginSummary $:/plugins/SideEditor>>
+: (visually modified version of Mat's side editor)
+
+! Reporting bugs
+[[create an issue on GitHub|https://github.com/nome/TiddlyPlugins/issues]]
+
+! Contributing
+# [[fork repository on GitHub|https://github.com/nome/TiddlyPlugins/issues]] and [[clone it|https://help.github.com/articles/fork-a-repo/]]
+# install [[node.js|http://nodejs.org]]
+# `npm install -g tiddlywiki`
+# in your local copy of ~TiddlyPlugins, run `tiddlywiki --server`
+# open http://localhost:8080
+# edit files and restart the `tiddlywiki --server` for changes to take effect
+# [[commit changes|http://rogerdudler.github.io/git-guide/]]
+# [[submit a pull request|https://help.github.com/articles/using-pull-requests/]]

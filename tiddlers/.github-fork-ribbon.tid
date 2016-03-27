@@ -1,0 +1,6 @@
+title: $:/github-fork-ribbon
+tags: $:/tags/PageControls
+caption: ~GitHub ribbon
+description: ~GitHub ribbon for ~TiddlyPlugins
+
+<div class="github-fork-ribbon-wrapper right"><div class="github-fork-ribbon"><a href="https://github.com/nome/TiddlyPlugins" target="_blank">Fork me on ~GitHub</a></div></div>
