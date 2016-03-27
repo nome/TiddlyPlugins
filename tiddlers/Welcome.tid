@@ -1,31 +1,29 @@
 created: 20160327181853852
-modified: 20160327184343097
+modified: 20160327192535257
 tags: 
 title: Welcome
 type: text/vnd.tiddlywiki
 
 \define pluginSummary(plugin)
-; $plugin$
-: {{$plugin$!!description}}
+!!! $plugin$ - {{$plugin$!!description}}
+: <$appear show="show readme {{$:/core/images/chevron-right}}" hide="hide readme {{$:/core/images/chevron-left}}" $state="$:/state/readme/$plugin$">
+
+<$transclude tiddler="$plugin$" subtiddler="$plugin$/readme" />
+
+</$appear>
 \end
 
 This wiki serves as a live demo and distribution source for a couple of [[TiddlyWiki5|http://tiddlywiki.com]] plugins. To install, just drag and drop them to your wiki.
 
 ! The plugins
-!! themes
 <<pluginSummary $:/themes/nome/github>>
 
-!! plugins
 <<pluginSummary $:/plugins/nome/publishing>>
-
-!! core hacks
-These are packaged as plugins, but listed separately, because they modify core functionality and thus may break future ~TiddlyWiki updates or other plugins.
 
 <<pluginSummary $:/plugins/nome/KbShortcuts>>
 
-!! modified versions of other people's plugins
 <<pluginSummary $:/plugins/SideEditor>>
-: (visually modified version of Mat's side editor)
+: (a visually modified version of Mat's side editor)
 
 ! Reporting bugs
 [[create an issue on GitHub|https://github.com/nome/TiddlyPlugins/issues]]
