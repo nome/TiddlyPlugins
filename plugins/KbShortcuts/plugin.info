@@ -1,0 +1,9 @@
+{
+	"title": "$:/plugins/nome/KbShortcuts",
+	"version": "0.0.0",
+	"author": "KnutFranke",
+	"core-version": ">=5.1.0",
+	"plugin-type": "plugin",
+	"description": "Extended support for keyboard shortcuts",
+	"list": ["readme"]
+}

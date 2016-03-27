@@ -1,0 +1,6 @@
+tags: 
+title: $:/plugins/nome/KbShortcuts/readme
+
+Extended support for keyboard shorcuts, in particular global shortcuts.
+
+There are no suitable hooks for adding this kind of functionality, so this plugin hides a few core tiddlers. This means it may very well break future TW updates.
