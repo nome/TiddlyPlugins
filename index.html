@@ -127,6 +127,8 @@ Error message and password prompt
 
 <li>$:/plugins/nome/KbShortcuts</li>
 
+<li>$:/plugins/nome/NewTabButton</li>
+
 <li>$:/plugins/nome/publishing</li>
 
 <li>$:/plugins/SideEditor</li>
@@ -152,6 +154,8 @@ Error message and password prompt
 <li>$:/themes/tiddlywiki/snowwhite</li>
 
 <li>$:/themes/tiddlywiki/vanilla</li>
+
+<li>Contributing</li>
 
 <li>Welcome</li>
 
@@ -6214,8 +6218,8 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20160327181836125" modified="20160327181838165" title="$:/DefaultTiddlers" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>Welcome
+<div created="20160327181836125" modified="20160327203132734" title="$:/DefaultTiddlers" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>Welcome Contributing
 </pre>
 </div>
 <div caption="~GitHub ribbon" description="~GitHub ribbon for ~TiddlyPlugins" tags="$:/tags/PageControls" title="$:/github-fork-ribbon" revision="0" bag="default">
@@ -6259,6 +6263,31 @@ Error message and password prompt
             &quot;tags&quot;: &quot;&quot;,
             &quot;title&quot;: &quot;$:/plugins/nome/KbShortcuts/readme&quot;,
             &quot;text&quot;: &quot;Extended support for keyboard shorcuts, in particular global shortcuts.\n\n&lt;div style=\&quot;border-style:solid; border-width: 2px; padding:5px;\&quot;&gt;\n&lt;div style=\&quot;float: left; margin-right:5px;\&quot;&gt;{{$:/core/images/warning}}&lt;/div&gt;\nThere seem to be no suitable hooks for adding this kind of functionality, so this plugin hides a few core tiddlers. This means it may very well break future TW updates.\n&lt;/div&gt;\n\n!! Configuration and default bindings\nsee $:/config/GlobalShortcuts\n\n!! Supported named keys\nKey descriptors have the following format:\n\n```\nctrl+enter\nctrl+shift+alt+A\n```\n\nApart from alphanumeric keys and ctrl/shift/alt/meta modifiers, the following named keys are supported:\n\n* backspace\n* tab\n* enter\n* escape\n* space\n* pgup\n* pgdown\n* end\n* home\n* left\n* up\n* right\n* down\n* insert\n* delete\n* mult\n* plus\n* minus\n* div\n* f1-f12\n&quot;
+        }
+    }
+}</pre>
+</div>
+<div author="KnutFranke" core-version="&gt;=5.1.0" dependents="" description="Button to easily create new sidebar tabs" list="readme" plugin-type="plugin" title="$:/plugins/nome/NewTabButton" type="application/json" version="0.0.1" revision="0" bag="default">
+<pre>{
+    &quot;tiddlers&quot;: {
+        &quot;$:/plugins/nome/NewTabButton/Button&quot;: {
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;title&quot;: &quot;$:/plugins/nome/NewTabButton/Button&quot;,
+            &quot;text&quot;: &quot;&lt;$button tooltip=\&quot;Create a sidebar tab\&quot; aria-label=\&quot;new sidebar tab\&quot; class=\&quot;tc-btn-invisible\&quot;&gt;\n&lt;$action-sendmessage $message=\&quot;tm-new-tiddler\&quot;\n\ttitle=\&quot;New Tab\&quot;\n\ttags=\&quot;$:/tags/SideBar\&quot;\n\ttext=\&quot;\&quot;\&quot;&lt;div class=\&quot;tc-table-of-contents\&quot;&gt;&lt;&lt;toc-selective-expandable $(currentTab)$&gt;&gt;&lt;/div&gt;\&quot;\&quot;\&quot;\n\t/&gt;\n{{$:/core/images/new-button}}\n&lt;/$button&gt;\n&quot;
+        },
+        &quot;$:/core/ui/SideBarLists&quot;: {
+            &quot;title&quot;: &quot;$:/core/ui/SideBarLists&quot;,
+            &quot;text&quot;: &quot;&lt;div class=\&quot;tc-sidebar-lists\&quot;&gt;\n\n&lt;$set name=\&quot;searchTiddler\&quot; value=\&quot;$:/temp/search\&quot;&gt;\n&lt;div class=\&quot;tc-search\&quot;&gt;\n&lt;$edit-text tiddler=\&quot;$:/temp/search\&quot; type=\&quot;search\&quot; tag=\&quot;input\&quot; focus={{$:/config/Search/AutoFocus}} focusPopup=&lt;&lt;qualify \&quot;$:/state/popup/search-dropdown\&quot;&gt;&gt; class=\&quot;tc-popup-handle\&quot;/&gt;\n&lt;$reveal state=\&quot;$:/temp/search\&quot; type=\&quot;nomatch\&quot; text=\&quot;\&quot;&gt;\n&lt;$button tooltip={{$:/language/Buttons/AdvancedSearch/Hint}} aria-label={{$:/language/Buttons/AdvancedSearch/Caption}} class=\&quot;tc-btn-invisible\&quot;&gt;\n&lt;$action-setfield $tiddler=\&quot;$:/temp/advancedsearch\&quot; text={{$:/temp/search}}/&gt;\n&lt;$action-setfield $tiddler=\&quot;$:/temp/search\&quot; text=\&quot;\&quot;/&gt;\n&lt;$action-navigate $to=\&quot;$:/AdvancedSearch\&quot;/&gt;\n{{$:/core/images/advanced-search-button}}\n&lt;/$button&gt;\n&lt;$button class=\&quot;tc-btn-invisible\&quot;&gt;\n&lt;$action-setfield $tiddler=\&quot;$:/temp/search\&quot; text=\&quot;\&quot; /&gt;\n{{$:/core/images/close-button}}\n&lt;/$button&gt;\n&lt;$button popup=&lt;&lt;qualify \&quot;$:/state/popup/search-dropdown\&quot;&gt;&gt; class=\&quot;tc-btn-invisible\&quot;&gt;\n&lt;$set name=\&quot;resultCount\&quot; value=\&quot;\&quot;\&quot;&lt;$count filter=\&quot;[!is[system]search{$(searchTiddler)$}]\&quot;/&gt;\&quot;\&quot;\&quot;&gt;\n{{$:/core/images/down-arrow}} {{$:/language/Search/Matches}}\n&lt;/$set&gt;\n&lt;/$button&gt;\n&lt;/$reveal&gt;\n&lt;$reveal state=\&quot;$:/temp/search\&quot; type=\&quot;match\&quot; text=\&quot;\&quot;&gt;\n&lt;$button to=\&quot;$:/AdvancedSearch\&quot; tooltip={{$:/language/Buttons/AdvancedSearch/Hint}} aria-label={{$:/language/Buttons/AdvancedSearch/Caption}} class=\&quot;tc-btn-invisible\&quot;&gt;\n{{$:/core/images/advanced-search-button}}\n&lt;/$button&gt;\n&lt;/$reveal&gt;\n&lt;/div&gt;\n\n&lt;$reveal tag=\&quot;div\&quot; class=\&quot;tc-block-dropdown-wrapper\&quot; state=\&quot;$:/temp/search\&quot; type=\&quot;nomatch\&quot; text=\&quot;\&quot;&gt;\n\n&lt;$reveal tag=\&quot;div\&quot; class=\&quot;tc-block-dropdown tc-search-drop-down tc-popup-handle\&quot; state=&lt;&lt;qualify \&quot;$:/state/popup/search-dropdown\&quot;&gt;&gt; type=\&quot;nomatch\&quot; text=\&quot;\&quot; default=\&quot;\&quot;&gt;\n\n{{$:/core/ui/SearchResults}}\n\n&lt;/$reveal&gt;\n\n&lt;/$reveal&gt;\n\n&lt;/$set&gt;\n\n&lt;$macrocall $name=\&quot;tabs\&quot; tabsList=\&quot;[all[shadows+tiddlers]tag[$:/tags/SideBar]!has[draft.of]]\&quot; default={{$:/config/DefaultSidebarTab}} state=\&quot;$:/state/tab/sidebar\&quot; tabsEpilog=\&quot;[[$:/plugins/nome/NewTabButton/Button]]\&quot;/&gt;\n\n&lt;/div&gt;\n&quot;
+        },
+        &quot;$:/core/macros/tabs&quot;: {
+            &quot;title&quot;: &quot;$:/core/macros/tabs&quot;,
+            &quot;tags&quot;: &quot;$:/tags/Macro&quot;,
+            &quot;text&quot;: &quot;\\define tabs(tabsList,default,state:\&quot;$:/state/tab\&quot;,class,template,tabsEpilog)\n&lt;div class=\&quot;tc-tab-set $class$\&quot;&gt;\n&lt;span class=\&quot;tc-tab-buttons $class$\&quot;&gt;\n&lt;$list filter=\&quot;$tabsList$\&quot; variable=\&quot;currentTab\&quot;&gt;&lt;$set name=\&quot;save-currentTiddler\&quot; value=&lt;&lt;currentTiddler&gt;&gt;&gt;&lt;$tiddler tiddler=&lt;&lt;currentTab&gt;&gt;&gt;&lt;$button set=&lt;&lt;qualify \&quot;$state$\&quot;&gt;&gt; setTo=&lt;&lt;currentTab&gt;&gt; default=\&quot;$default$\&quot; selectedClass=\&quot;tc-tab-selected\&quot; tooltip={{!!tooltip}}&gt;\n&lt;$tiddler tiddler=&lt;&lt;save-currentTiddler&gt;&gt;&gt;\n&lt;$set name=\&quot;tv-wikilinks\&quot; value=\&quot;no\&quot;&gt;\n&lt;$transclude tiddler=&lt;&lt;currentTab&gt;&gt; field=\&quot;caption\&quot;&gt;\n&lt;$macrocall $name=\&quot;currentTab\&quot; $type=\&quot;text/plain\&quot; $output=\&quot;text/plain\&quot;/&gt;\n&lt;/$transclude&gt;\n&lt;/$set&gt;&lt;/$tiddler&gt;&lt;/$button&gt;&lt;/$tiddler&gt;&lt;/$set&gt;&lt;/$list&gt;\n&lt;/span&gt;\n&lt;$list filter=\&quot;$tabsEpilog$\&quot;&gt;&lt;$transclude mode=\&quot;inline\&quot;/&gt;&lt;/$list&gt;\n&lt;div class=\&quot;tc-tab-divider $class$\&quot;/&gt;\n&lt;div class=\&quot;tc-tab-content $class$\&quot;&gt;\n&lt;$list filter=\&quot;$tabsList$\&quot; variable=\&quot;currentTab\&quot;&gt;\n\n&lt;$reveal type=\&quot;match\&quot; state=&lt;&lt;qualify \&quot;$state$\&quot;&gt;&gt; text=&lt;&lt;currentTab&gt;&gt; default=\&quot;$default$\&quot;&gt;\n\n&lt;$transclude tiddler=\&quot;$template$\&quot; mode=\&quot;block\&quot;&gt;\n\n&lt;$transclude tiddler=&lt;&lt;currentTab&gt;&gt; mode=\&quot;block\&quot;/&gt;\n\n&lt;/$transclude&gt;\n\n&lt;/$reveal&gt;\n\n&lt;/$list&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n\\end\n&quot;
+        },
+        &quot;$:/plugins/nome/NewTabButton/readme&quot;: {
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;title&quot;: &quot;$:/plugins/nome/NewTabButton/readme&quot;,
+            &quot;text&quot;: &quot;Adds a small button to the end of the sidebar tabs which allow users to easily create new tabs.\n\n&lt;div style=\&quot;border-style:solid; border-width: 2px; padding:5px;\&quot;&gt;\n&lt;div style=\&quot;float: left; margin-right:5px;\&quot;&gt;{{$:/core/images/warning}}&lt;/div&gt;\nThere seem to be no suitable hooks for adding this kind of functionality, so this plugin hides a few core tiddlers. This means it may very well break future TW updates.\n&lt;/div&gt;\n\n&quot;
         }
     }
 }</pre>
@@ -6471,7 +6500,7 @@ Error message and password prompt
 <div created="20160327181816457" modified="20160327181821527" title="$:/SiteTitle" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>~TiddlyPlugins</pre>
 </div>
-<div list="Welcome" title="$:/StoryList" revision="1" bag="default">
+<div list="Welcome Contributing" title="$:/StoryList" revision="1" bag="default">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json" revision="0" bag="default">
@@ -6654,7 +6683,17 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20160327181853852" modified="20160327192535257" tags="" title="Welcome" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20160327203054305" modified="20160327203116033" tags="" title="Contributing" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre># [[fork repository on GitHub|https://github.com/nome/TiddlyPlugins/issues]] and [[clone it|https://help.github.com/articles/fork-a-repo/]]
+# install [[node.js|http://nodejs.org]]
+# `npm install -g tiddlywiki`
+# in your local copy of ~TiddlyPlugins, run `tiddlywiki --server`
+# open http://localhost:8080
+# edit files and restart the `tiddlywiki --server` for changes to take effect
+# [[commit changes|http://rogerdudler.github.io/git-guide/]]
+# [[submit a pull request|https://help.github.com/articles/using-pull-requests/]]</pre>
+</div>
+<div created="20160327181853852" modified="20160327210459658" tags="" title="Welcome" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>\define pluginSummary(plugin)
 !!! $plugin$ - {{$plugin$!!description}}
 : &lt;$appear show=&quot;show readme {{$:/core/images/chevron-right}}&quot; hide=&quot;hide readme {{$:/core/images/chevron-left}}&quot; $state=&quot;$:/state/readme/$plugin$&quot;&gt;
@@ -6673,21 +6712,13 @@ This wiki serves as a live demo and distribution source for a couple of [[Tiddly
 
 &lt;&lt;pluginSummary $:/plugins/nome/KbShortcuts&gt;&gt;
 
+&lt;&lt;pluginSummary $:/plugins/nome/NewTabButton&gt;&gt;
+
 &lt;&lt;pluginSummary $:/plugins/SideEditor&gt;&gt;
 : (a visually modified version of Mat's side editor)
 
 ! Reporting bugs
-[[create an issue on GitHub|https://github.com/nome/TiddlyPlugins/issues]]
-
-! Contributing
-# [[fork repository on GitHub|https://github.com/nome/TiddlyPlugins/issues]] and [[clone it|https://help.github.com/articles/fork-a-repo/]]
-# install [[node.js|http://nodejs.org]]
-# `npm install -g tiddlywiki`
-# in your local copy of ~TiddlyPlugins, run `tiddlywiki --server`
-# open http://localhost:8080
-# edit files and restart the `tiddlywiki --server` for changes to take effect
-# [[commit changes|http://rogerdudler.github.io/git-guide/]]
-# [[submit a pull request|https://help.github.com/articles/using-pull-requests/]]</pre>
+[[create an issue on GitHub|https://github.com/nome/TiddlyPlugins/issues]]</pre>
 </div>
 
 </div>
