@@ -1,0 +1,8 @@
+title: $:/config/GlobalShortcuts
+type: application/x-tiddler-dictionary
+
+ctrl+plus:tm-new-tiddler
+ctrl+shift+F:tm-full-screen
+ctrl+down:tm-navigate-next
+ctrl+up:tm-navigate-prev
+f2:tm-edit-tiddler

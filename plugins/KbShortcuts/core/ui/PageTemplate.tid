@@ -24,6 +24,8 @@ tc-page-container tc-page-view-$(themeTitle)$ tc-language-$(languageTitle)$
 
 <$navigator story="$:/StoryList" history="$:/HistoryList" openLinkFromInsideRiver={{$:/config/Navigation/openLinkFromInsideRiver}} openLinkFromOutsideRiver={{$:/config/Navigation/openLinkFromOutsideRiver}}>
 
+<$keyboard mappings="$:/config/GlobalShortcuts">
+
 <$dropzone>
 
 <$list filter="[all[shadows+tiddlers]tag[$:/tags/PageTemplate]!has[draft.of]]" variable="listItem">
@@ -33,6 +35,8 @@ tc-page-container tc-page-view-$(themeTitle)$ tc-language-$(languageTitle)$
 </$list>
 
 </$dropzone>
+
+</$keyboard>
 
 </$navigator>
 
