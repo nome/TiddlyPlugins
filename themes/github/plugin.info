@@ -1,0 +1,11 @@
+{
+	"title": "$:/themes/nome/github",
+	"name": "GitHub",
+	"version": "0.0.5",
+	"author": "KnutFranke",
+	"core-version": ">=5.0.0",
+	"plugin-type": "theme",
+	"description": "GitHub inspired theme",
+	"dependents": ["$:/themes/tiddlywiki/snowwhite"],
+	"list": ["readme"]
+}

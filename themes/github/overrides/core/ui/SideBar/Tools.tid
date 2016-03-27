@@ -1,0 +1,18 @@
+caption: {{$:/language/SideBar/Tools/Caption}}
+created: 20160312103235178
+modified: 20160312132156935
+revision: 9
+title: $:/core/ui/SideBar/Tools
+type: text/vnd.tiddlywiki
+
+\define lingo-base() $:/language/ControlPanel/
+\define config-title()
+$:/config/PageControlButtons/Visibility/$(listItem)$
+\end
+
+This tiddler hides the "Tools" sidebar tab defined in the core UI, reproduced below. To re-enable the tab, edit this tiddler, add the tag $:/tags/SideBar, and remove/edit this message 
+(which will otherwise appear in the tab).
+
+---
+
+<$transclude tiddler="$:/core" subtiddler="$:/core/ui/SideBar/Tools" />

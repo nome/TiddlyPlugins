@@ -1,0 +1,10 @@
+created: 20160313003206232
+modified: 20160313004012206
+tags: 
+title: $:/themes/nome/github/readme
+
+A clean, bright theme inspired by GitHub.
+
+''Note:'' Intentionally hides the "Tools" sidebar tab in order to reduce clutter, and switches on the "more page actions" icon (which has the same list of actions as Tools). See $:/core/ui/SideBar/Tools (after selecting the theme).
+
+Also, the default palette is changed to the included one ($:/palettes/github); if you have changed the palette yourself, you need to manually select it to get the intended visual effect.
