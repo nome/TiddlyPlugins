@@ -1,5 +1,5 @@
 created: 20160327181853852
-modified: 20160327192535257
+modified: 20160327203120013
 tags: 
 title: Welcome
 type: text/vnd.tiddlywiki
@@ -27,13 +27,3 @@ This wiki serves as a live demo and distribution source for a couple of [[Tiddly
 
 ! Reporting bugs
 [[create an issue on GitHub|https://github.com/nome/TiddlyPlugins/issues]]
-
-! Contributing
-# [[fork repository on GitHub|https://github.com/nome/TiddlyPlugins/issues]] and [[clone it|https://help.github.com/articles/fork-a-repo/]]
-# install [[node.js|http://nodejs.org]]
-# `npm install -g tiddlywiki`
-# in your local copy of ~TiddlyPlugins, run `tiddlywiki --server`
-# open http://localhost:8080
-# edit files and restart the `tiddlywiki --server` for changes to take effect
-# [[commit changes|http://rogerdudler.github.io/git-guide/]]
-# [[submit a pull request|https://help.github.com/articles/using-pull-requests/]]

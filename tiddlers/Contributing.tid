@@ -1,0 +1,14 @@
+created: 20160327203054305
+modified: 20160327203116033
+tags: 
+title: Contributing
+type: text/vnd.tiddlywiki
+
+# [[fork repository on GitHub|https://github.com/nome/TiddlyPlugins/issues]] and [[clone it|https://help.github.com/articles/fork-a-repo/]]
+# install [[node.js|http://nodejs.org]]
+# `npm install -g tiddlywiki`
+# in your local copy of ~TiddlyPlugins, run `tiddlywiki --server`
+# open http://localhost:8080
+# edit files and restart the `tiddlywiki --server` for changes to take effect
+# [[commit changes|http://rogerdudler.github.io/git-guide/]]
+# [[submit a pull request|https://help.github.com/articles/using-pull-requests/]]
