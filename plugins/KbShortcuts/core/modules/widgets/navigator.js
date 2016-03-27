@@ -20,6 +20,8 @@ var NavigatorWidget = function(parseTreeNode,options) {
 	this.initialise(parseTreeNode,options);
 	this.addEventListeners([
 		{type: "tm-navigate", handler: "handleNavigateEvent"},
+		{type: "tm-navigate-next", handler: "handleNavigateNextEvent"},
+		{type: "tm-navigate-prev", handler: "handleNavigatePrevEvent"},
 		{type: "tm-edit-tiddler", handler: "handleEditTiddlerEvent"},
 		{type: "tm-delete-tiddler", handler: "handleDeleteTiddlerEvent"},
 		{type: "tm-save-tiddler", handler: "handleSaveTiddlerEvent"},
@@ -79,6 +81,10 @@ NavigatorWidget.prototype.refresh = function(changedTiddlers) {
 
 NavigatorWidget.prototype.getStoryList = function() {
 	return this.storyTitle ? this.wiki.getTiddlerList(this.storyTitle) : null;
+};
+
+NavigatorWidget.prototype.getCurrentTiddler = function() {
+	return this.historyTitle ? this.wiki.getTiddler(this.historyTitle).fields["current-tiddler"] : null;
 };
 
 NavigatorWidget.prototype.saveStoryList = function(storyList) {
@@ -183,6 +189,26 @@ NavigatorWidget.prototype.handleNavigateEvent = function(event) {
 	return false;
 };
 
+NavigatorWidget.prototype.handleNavigateNextEvent = function(event) {
+	var storyList = this.getStoryList(),
+		current = this.getCurrentTiddler(),
+		curIndex = storyList.indexOf(current);
+	if(curIndex+1 < storyList.length) {
+		this.addToHistory(storyList[curIndex+1],event.navigateFromClientRect);
+	}
+	return false;
+};
+
+NavigatorWidget.prototype.handleNavigatePrevEvent = function(event) {
+	var storyList = this.getStoryList(),
+		current = this.getCurrentTiddler(),
+		curIndex = storyList.indexOf(current);
+	if(curIndex > 0) {
+		this.addToHistory(storyList[curIndex-1],event.navigateFromClientRect);
+	}
+	return false;
+};
+
 // Close a specified tiddler
 NavigatorWidget.prototype.handleCloseTiddlerEvent = function(event) {
 	var title = event.param || event.tiddlerTitle,
@@ -220,7 +246,7 @@ NavigatorWidget.prototype.handleEditTiddlerEvent = function(event) {
 			}
 		));
 	}
-	var title = event.param || event.tiddlerTitle;
+	var title = event.param || event.tiddlerTitle || this.getCurrentTiddler();
 	if(isUnmodifiedShadow(title) && !confirmEditShadow(title)) {
 		return false;
 	}
