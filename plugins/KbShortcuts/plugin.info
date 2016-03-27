@@ -1,6 +1,6 @@
 {
 	"title": "$:/plugins/nome/KbShortcuts",
-	"version": "0.0.0",
+	"version": "0.0.1",
 	"author": "KnutFranke",
 	"core-version": ">=5.1.0",
 	"plugin-type": "plugin",

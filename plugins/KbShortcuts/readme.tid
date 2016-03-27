@@ -3,7 +3,13 @@ title: $:/plugins/nome/KbShortcuts/readme
 
 Extended support for keyboard shorcuts, in particular global shortcuts.
 
-There are no suitable hooks for adding this kind of functionality, so this plugin hides a few core tiddlers. This means it may very well break future TW updates.
+<div style="border-style:solid; border-width: 2px; padding:5px;">
+<div style="float: left; margin-right:5px;">{{$:/core/images/warning}}</div>
+There seem to be no suitable hooks for adding this kind of functionality, so this plugin hides a few core tiddlers. This means it may very well break future TW updates.
+</div>
+
+!! Configuration and default bindings
+see $:/config/GlobalShortcuts
 
 !! Supported named keys
 Key descriptors have the following format:
