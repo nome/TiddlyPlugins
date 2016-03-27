@@ -63,6 +63,9 @@ KeyboardWidget.prototype.render = function(parent,nextSibling) {
 	},false);
 	// Insert element
 	parent.insertBefore(domNode,nextSibling);
+	// make sure we receive keyboard events
+	domNode.setAttribute("tabindex", "0");
+	domNode.focus();
 	this.renderChildren(domNode,null);
 	this.domNodes.push(domNode);
 };
