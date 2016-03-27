@@ -4,3 +4,34 @@ title: $:/plugins/nome/KbShortcuts/readme
 Extended support for keyboard shorcuts, in particular global shortcuts.
 
 There are no suitable hooks for adding this kind of functionality, so this plugin hides a few core tiddlers. This means it may very well break future TW updates.
+
+!! Supported named keys
+Key descriptors have the following format:
+
+```
+ctrl+enter
+ctrl+shift+alt+A
+```
+
+Apart from alphanumeric keys and ctrl/shift/alt/meta modifiers, the following named keys are supported:
+
+* backspace
+* tab
+* enter
+* escape
+* space
+* pgup
+* pgdown
+* end
+* home
+* left
+* up
+* right
+* down
+* insert
+* delete
+* mult
+* plus
+* minus
+* div
+* f1-f12

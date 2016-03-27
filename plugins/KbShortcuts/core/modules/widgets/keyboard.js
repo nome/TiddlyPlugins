@@ -68,7 +68,12 @@ KeyboardWidget.prototype.execute = function() {
 	this.message = this.getAttribute("message");
 	this.param = this.getAttribute("param");
 	this.key = this.getAttribute("key");
-	this.keyInfo = $tw.utils.parseKeyDescriptor(this.key);
+	var logger = new $tw.utils.Logger("$keyboard");
+	try {
+		this.keyInfo = $tw.utils.parseKeyDescriptor(this.key);
+	} catch(err) {
+		logger.alert("[[" + this.getVariable("currentTiddler") + "]]: " + err + " in key=" + this.key);
+	}
 	this["class"] = this.getAttribute("class");
 	// Make child widgets
 	this.makeChildWidgets();

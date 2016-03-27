@@ -16,7 +16,34 @@ var namedKeys = {
 	"backspace": 8,
 	"tab": 9,
 	"enter": 13,
-	"escape": 27
+	"escape": 27,
+	"space": 32,
+	"pgup": 33,
+	"pgdown": 34,
+	"end": 35,
+	"home": 36,
+	"left": 37,
+	"up": 38,
+	"right": 39,
+	"down": 40,
+	"insert": 45,
+	"delete": 46,
+	"mult": 106,
+	"plus": 107,
+	"minus": 109,
+	"div": 111,
+	"f1": 112,
+	"f2": 113,
+	"f3": 114,
+	"f4": 115,
+	"f5": 116,
+	"f6": 117,
+	"f7": 118,
+	"f8": 119,
+	"f9": 120,
+	"f10": 121,
+	"f11": 122,
+	"f12": 123
 };
 
 /*
@@ -50,10 +77,12 @@ exports.parseKeyDescriptor = function(keyDescriptor) {
 			info.altKey = true;
 		} else if(s === "meta") {
 			info.metaKey = true;
-		}
-		// Replace named keys with their code
-		if(namedKeys[s]) {
+		} else if(namedKeys[s]) {
 			info.keyCode = namedKeys[s];
+		} else if(s.length === 1) {
+			info.keyCode = s.toUpperCase().charCodeAt(0);
+		} else {
+			throw "invalid key descriptor component " + components[t];
 		}
 	}
 	return info;
