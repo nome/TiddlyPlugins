@@ -1,0 +1,9 @@
+{
+	"title": "$:/plugins/nome/publishing",
+	"version": "0.0.4",
+	"author": "KnutFranke",
+	"core-version": ">=5.0.0",
+	"plugin-type": "plugin",
+	"description": "Tools for wiki publishing",
+	"list": ["readme"]
+}

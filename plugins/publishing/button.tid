@@ -1,0 +1,20 @@
+caption: {{$:/core/images/globe}} {{$:/language/Buttons/PublishWiki/Caption}}
+created: 20160313122259194
+description: {{$:/language/Buttons/PublishWiki/Hint}}
+list-after: $:/core/ui/Buttons/save-wiki
+modified: 20160313180729435
+revision: 3
+tags: $:/tags/PageControls
+title: $:/plugins/nome/publishing/button
+type: text/vnd.tiddlywiki
+
+<$button message="tm-download-file" param="$:/plugins/nome/publishing/save/public" tooltip={{$:/language/Buttons/PublishWiki/Hint}} aria-label={{$:/language/Buttons/PublishWiki/Caption}} class=<<tv-config-toolbar-class>>>
+<span class="tc-dirty-indicator">
+<$list filter="[<tv-config-toolbar-icons>prefix[yes]]">
+{{$:/core/images/globe}}
+</$list>
+<$list filter="[<tv-config-toolbar-text>prefix[yes]]">
+<span class="tc-btn-text"><$text text={{$:/language/Buttons/PublishWiki/Caption}}/></span>
+</$list>
+</span>
+</$button>

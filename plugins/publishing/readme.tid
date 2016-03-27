@@ -1,0 +1,9 @@
+created: 20160313174847144
+modified: 20160313175610977
+tags: 
+title: $:/plugins/nome/publishing/readme
+
+Tools for using a Node.js based ~TiddlyWiki to publish standalone versions of itself. Currently just a button which works like "download", but yields a wiki containing only tiddlers tagged `public` (plus system tiddlers).
+
+! known bugs
+If the recipient of the published wiki uses Firefox with the ~TiddlyFox plugin installed, re-exporting will overwrite the wiki with the public part instead of asking for a new filename.

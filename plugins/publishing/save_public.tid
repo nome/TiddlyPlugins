@@ -1,0 +1,10 @@
+created: 20160313121552897
+modified: 20160313123431241
+revision: 3
+tags: 
+title: $:/plugins/nome/publishing/save/public
+type: text/vnd.tiddlywiki
+
+<$set name="publishFilter" value="-[!is[system]!tag[public]]">
+<$transclude tiddler="$:/plugins/tiddlywiki/tiddlyweb/save/offline"/>
+</$set>
