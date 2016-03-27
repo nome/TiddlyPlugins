@@ -1,0 +1,11 @@
+tags: 
+title: $:/plugins/nome/NewTabButton/Button
+
+<$button tooltip="Create a sidebar tab" aria-label="new sidebar tab" class="tc-btn-invisible">
+<$action-sendmessage $message="tm-new-tiddler"
+	title="New Tab"
+	tags="$:/tags/SideBar"
+	text="""<div class="tc-table-of-contents"><<toc-selective-expandable $(currentTab)$>></div>"""
+	/>
+{{$:/core/images/new-button}}
+</$button>

@@ -1,0 +1,10 @@
+tags: 
+title: $:/plugins/nome/NewTabButton/readme
+
+Adds a small button to the end of the sidebar tabs which allow users to easily create new tabs.
+
+<div style="border-style:solid; border-width: 2px; padding:5px;">
+<div style="float: left; margin-right:5px;">{{$:/core/images/warning}}</div>
+There seem to be no suitable hooks for adding this kind of functionality, so this plugin hides a few core tiddlers. This means it may very well break future TW updates.
+</div>
+

@@ -1,0 +1,9 @@
+{
+	"title": "$:/plugins/nome/NewTabButton",
+	"version": "0.0.1",
+	"author": "KnutFranke",
+	"core-version": ">=5.1.0",
+	"plugin-type": "plugin",
+	"description": "Button to easily create new sidebar tabs",
+	"list": ["readme"]
+}
