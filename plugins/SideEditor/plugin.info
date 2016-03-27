@@ -1,0 +1,10 @@
+{
+	"title": "$:/plugins/SideEditor",
+	"version": "0.0.6",
+	"author": "Mat",
+	"source": "http://sideeditor.tiddlyspot.com/",
+	"core-version": "5.1.9",
+	"plugin-type": "plugin",
+	"description": "SideEditor - a \"live\" editor next to your tiddler",
+	"list": ["readme"]
+}

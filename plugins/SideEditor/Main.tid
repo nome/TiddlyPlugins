@@ -1,0 +1,84 @@
+created: 20150601094857763
+creator: Mat
+modified: 20150822221510951
+modifier: Mat
+tags: $:/tags/Macro $:/tags/PageTemplate
+title: $:/plugins/SideEditor/Main
+
+\define slider(field)
+<div id="slider$field$"> <$edit-text tag="input" type="range" tiddler="$:/plugins/SideEditor/Metrics" field="$field$"/></div>
+\end
+
+\define sideeditor(tid)
+<<slider "edge-left">><<slider "edge-top">>
+<div id="resizerdiv">@@background-color:white; &nbsp; <span class="minibutton">{{$:/plugins/SideEditor/Button}}</span> &nbsp;<$link to="$tid$"><$view tiddler="$tid$" field="title" format="text"></$view></$link>&nbsp;@@<br>
+   <$edit-text tiddler="$tid$" field="text" class="sideeditor" /></div>
+\end
+
+<style>
+.minibutton svg {fill: lightgray; width: 1em; height: 1em;}
+
+.sideeditor           { resize:horizontal; overflow-y:auto; width:400px; 
+                              max-height:calc(-80px + 100vmin - {{$:/plugins/SideEditor/Metrics!!edge-top}}vmin); 
+                              border:1px solid gray; padding-left:5px; }
+#resizerdiv          { position:fixed; top:calc({{$:/plugins/SideEditor/Metrics!!edge-top}}vmin + 40px); 
+                              right:20px; overflow:hidden;
+                              width:{{$:/plugins/SideEditor/Metrics!!edge-left}}vmax; z-index:2001;}
+#slideredge-top   { position:fixed;  top:52vmin; 
+                              transform:rotate(90deg); width:100vmin; right:-45vmin; z-index:2000;}
+#slideredge-left   { position:fixed; bottom:2vmin; left:-3.5vmax;
+                             transform:rotate(180deg); width:100vmax; z-index:2000;}
+
+
+/************************ Range Slider styling ***********************/
+/*** CRED: https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/ ***/
+/*** See original code for commenting and original layout ****/
+
+/** Applying base styles **************/
+
+input[type=range] { -webkit-appearance: none; width: 100%; /* for Firefox. */ }
+input[type=range]::-webkit-slider-thumb {  -webkit-appearance: none; }
+input[type=range]:focus { outline: none; }
+
+input[type=range]::-ms-track {
+  width: 100%; height:0; cursor: pointer;
+  background: transparent; color: transparent;  border-color: transparent;
+}
+
+/** Styling the Thumb ***********************/
+
+/* Special styling for WebKit/Blink */
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  box-shadow: inset 4px 0px 0px gray, 0px 0px 0px #000000;
+  border: 0px;  border-radius: 0px;
+  height: 20px; width: 16px;
+  background: transparent;
+  cursor: pointer;
+  margin-top: -14px;
+}
+
+/* All the same stuff for Firefox */
+input[type=range]::-moz-range-thumb {
+  box-shadow: inset 4px 0px 0px gray, 0px 0px 0px #000000;
+  border: 0px;  border-radius: 0px;
+  height: 20px; width: 16px;
+  background: transparent;
+  cursor: pointer;
+}
+
+/* All the same stuff for IE */
+input[type=range]::-ms-thumb {
+  box-shadow: inset 4px 0px 0px gray, 0px 0px 0px #000000;
+  border: 0px;  border-radius: 0px;
+  height: 20px; width: 16px; 
+  background: transparent;
+  cursor: pointer;
+}
+
+/** Styling the Track *************************/
+
+input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 0px; }
+input[type=range]::-moz-range-track { height: 0px; }
+
+</style>

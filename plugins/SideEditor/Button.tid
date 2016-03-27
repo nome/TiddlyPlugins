@@ -1,0 +1,13 @@
+created: 20150601114223435
+creator: Mat
+modified: 20150807204315598
+modifier: Mat
+tags: $:/tags/ViewToolbar
+title: $:/plugins/SideEditor/Button
+
+<$reveal state="$:/state/sideeditor" type="nomatch" text="no">
+<$button set="$:/state/sideeditor" setTo="no" class="tc-btn-invisible">{{$:/core/images/chevron-left}}</$button>
+</$reveal>
+<$reveal state="$:/state/sideeditor" type="match" text="no">
+<$button set="$:/state/sideeditor" setTo=<<currentTiddler>> class="tc-btn-invisible">{{$:/core/images/chevron-right}}</$button>
+</$reveal>

@@ -1,0 +1,16 @@
+created: 20150601115921432
+creator: Mat
+modified: 20150807204350634
+modifier: Mat
+tags: $:/tags/PageTemplate
+title: $:/plugins/SideEditor/Revealer
+
+<div>
+
+<$reveal state="$:/state/sideeditor" type="nomatch" text="no" default="no" retain="yes">
+
+<$macrocall $name="sideeditor" tid={{$:/state/sideeditor}}/>
+
+</$reveal>
+
+</div>

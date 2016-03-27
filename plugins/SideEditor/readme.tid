@@ -1,0 +1,17 @@
+created: 20150807204704723
+creator: Mat
+modified: 20150808220017047
+modifier: Mat
+title: $:/plugins/SideEditor/readme
+
+''~SideEditor'' is a plugin to get a tiddlers editor show //floating on the side// of the story river.
+
+The purpose is to enable "live editing" and to be able to work on a tiddlers content while freely moving among the other tiddlers to, for instance, use them as references.
+
+''Trigger it'' via the tiddler tool button @@fill:lightgray;  {{$:/core/images/chevron-right}}@@ Note that you can easily switch which tiddler to edit in the ~SideEditor by closing and reopening.
+
+''Moving'' is done via the two gray handles and ''resizing'' via the lower right corner. (Length is automatic from typing). Unfortunately, move/resize is not yet implemented for for //Internet Explorer// as range sliders behave a bit differently there, and nothing is tested on //Safari//.
+
+''For updates'', see http://sideeditor.tiddlyspot.com/
+
+<br>''Mat <:-) the'' [[TWaddler|http://twaddle.tiddlyspot.com/]]
