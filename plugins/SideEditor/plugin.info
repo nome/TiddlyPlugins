@@ -1,7 +1,7 @@
 {
 	"title": "$:/plugins/SideEditor",
-	"version": "0.0.6",
-	"author": "Mat",
+	"version": "0.0.9",
+	"author": "Mat, Knut",
 	"source": "http://sideeditor.tiddlyspot.com/",
 	"core-version": "5.1.9",
 	"plugin-type": "plugin",

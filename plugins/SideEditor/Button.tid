@@ -1,9 +1,13 @@
+caption: {{$:/core/images/chevron-right}} side editor
 created: 20150601114223435
 creator: Mat
-modified: 20150807204315598
+description: show/hide the side editor
+modified: 20160312160949785
 modifier: Mat
+revision: 4
 tags: $:/tags/ViewToolbar
 title: $:/plugins/SideEditor/Button
+type: text/vnd.tiddlywiki
 
 <$reveal state="$:/state/sideeditor" type="nomatch" text="no">
 <$button set="$:/state/sideeditor" setTo="no" class="tc-btn-invisible">{{$:/core/images/chevron-left}}</$button>

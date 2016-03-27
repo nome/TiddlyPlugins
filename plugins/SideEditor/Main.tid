@@ -1,9 +1,11 @@
 created: 20150601094857763
 creator: Mat
-modified: 20150822221510951
+modified: 20160313194941338
 modifier: Mat
+revision: 47
 tags: $:/tags/Macro $:/tags/PageTemplate
 title: $:/plugins/SideEditor/Main
+type: text/vnd.tiddlywiki
 
 \define slider(field)
 <div id="slider$field$"> <$edit-text tag="input" type="range" tiddler="$:/plugins/SideEditor/Metrics" field="$field$"/></div>
@@ -11,16 +13,28 @@ title: $:/plugins/SideEditor/Main
 
 \define sideeditor(tid)
 <<slider "edge-left">><<slider "edge-top">>
-<div id="resizerdiv">@@background-color:white; &nbsp; <span class="minibutton">{{$:/plugins/SideEditor/Button}}</span> &nbsp;<$link to="$tid$"><$view tiddler="$tid$" field="title" format="text"></$view></$link>&nbsp;@@<br>
-   <$edit-text tiddler="$tid$" field="text" class="sideeditor" /></div>
+<div id="resizerdiv"><div id="sideeditor-frame">@@margin-left:-1.5em; &nbsp;<span class="minibutton">{{$:/plugins/SideEditor/Button}}</span><$link to="$tid$"><$view tiddler="$tid$" field="title" format="text"></$view></$link>&nbsp;@@<br>
+   <$edit-text tiddler="$tid$" field="text" class="sideeditor" /></div> </div>
 \end
 
 <style>
-.minibutton svg {fill: lightgray; width: 1em; height: 1em;}
+.minibutton svg { width: 1em; height: 1em; margin-right:0.5em; }
 
-.sideeditor           { resize:horizontal; overflow-y:auto; width:400px; 
-                              max-height:calc(-80px + 100vmin - {{$:/plugins/SideEditor/Metrics!!edge-top}}vmin); 
-                              border:1px solid gray; padding-left:5px; }
+#sideeditor-frame {
+                              background-color: white;
+                              border-radius: 2px;
+                              padding: 7px 21px 21px 21px;
+                              margin: 5px;
+                              box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+                              width: 642px;
+}
+
+.sideeditor           { resize:vertical; overflow-y:auto; width:600px;
+                              max-height:calc(-122px + 100vmin - {{$:/plugins/SideEditor/Metrics!!edge-top}}vmin);
+                              border: none;
+                              padding-left: 1em; padding-top: 0.5em;
+                              box-sizing: border-box; -mox-box-sizing: border-box; -webkit-box-sizing: border-box;
+}
 #resizerdiv          { position:fixed; top:calc({{$:/plugins/SideEditor/Metrics!!edge-top}}vmin + 40px); 
                               right:20px; overflow:hidden;
                               width:{{$:/plugins/SideEditor/Metrics!!edge-left}}vmax; z-index:2001;}
